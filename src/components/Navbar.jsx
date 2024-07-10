@@ -13,15 +13,17 @@ const Navbar = () => {
     imageUrl:
       'https://ui.shadcn.com/avatars/04.png',
   }
+
   const navigation = [
     { name: 'Dashboard', href: '#', current: true },
     { name: 'Projects', href: '#', current: false },
     { name: 'Calendar', href: '#', current: false },
     { name: 'Reports', href: '#', current: false },
   ]
+
   const userNavigation = [
     { name: 'Profile', href: '#' },
-    { name: 'Settings', href: '#' },
+    { name: 'Settings', href: '/settings' },
     { name: 'Log out', href: '#' },
   ]
 
