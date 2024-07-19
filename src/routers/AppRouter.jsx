@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar/Navbar'
 import DasboardPage from '../pages/DashboardPage'
+import StudentPage from '../pages/StudentPage'
 import NotFound from '../pages/NotFound'
 
 
@@ -15,6 +16,7 @@ const AppRouter = () => {
           <Routes>
             <Route path='/' element={ <DasboardPage /> }/>
             <Route path='/dashboard' element={ <DasboardPage /> }/>
+            <Route path='/student' element={ <StudentPage /> }/>
             <Route path='/page-not-found' element={ <NotFound /> }/>
             <Route path="*" element={<Navigate to={ '/page-not-found' }/>} />
           </Routes>

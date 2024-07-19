@@ -2,7 +2,7 @@ import React from 'react';
 import { CreditCardIcon, ArrowUpRightIcon, CalendarIcon } from '@heroicons/react/24/outline';
 
 const DashboardPage = () => {
-  const tabList= [
+  const tabList = [
     {name: 'Overview', selected: true, control: 'overview', state: 'active'},
     {name: 'Analytics', selected: false, control: 'analytics', state: 'inactive'},
     {name: 'Reports', selected: false, control: 'reports', state: 'inactive'},
@@ -84,7 +84,7 @@ const DashboardPage = () => {
               aria-controls={`radix-:r74:-content-${tab.control}`}
               data-state={tab.state}
               id={`radix-:r74:-content-${tab.control}`}
-              className={`inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${tab.state === 'active' ? 'bg-white text-gray-800 shadow' : ''}`}
+              className={`inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${tab.state === 'active' ? 'bg-white text-gray-800 shadow' : 'text-gray-400 hover:text-gray-900'}`}
               tabIndex="0" 
               data-orientation="horizontal" 
               data-radix-collection-item=""
