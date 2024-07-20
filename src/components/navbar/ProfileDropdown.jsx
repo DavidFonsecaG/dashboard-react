@@ -1,6 +1,15 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../reducers/authSlice';
+
 
 const ProfileDropDown = ({user, userNavigation}) => {
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logoutUser());
+    };
 
     return (
         <Menu as="div" className="hidden md:block relative ml-4">
@@ -16,14 +25,22 @@ const ProfileDropDown = ({user, userNavigation}) => {
                 <span className="block px-4 py-3 text-sm font-bold text-gray-900 border-b">My Account</span>
                 {userNavigation.map((item) => (
                     <MenuItem key={item.name}>
-                    <a
-                        href={item.href}
+                    <Link
+                        to={item.href}
                         className="block px-4 py-1.5 m-1 text-sm text-gray-700 rounded-md data-[focus]:bg-gray-100"
                     >
                         {item.name}
-                    </a>
+                    </Link>
                     </MenuItem>
                 ))}
+                    <MenuItem key="logout">
+                    <Link
+                        onClick={handleLogout}
+                        className="block px-4 py-1.5 m-1 text-sm text-gray-700 rounded-md data-[focus]:bg-gray-100"
+                    >
+                        Log out
+                    </Link>
+                    </MenuItem>
             </MenuItems>
         </Menu>
     );

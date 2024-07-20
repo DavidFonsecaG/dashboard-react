@@ -18,16 +18,16 @@ const Navbar = () => {
   }
 
   const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
-    { name: 'Reports', href: '#', current: false },
+    { public: true, name: 'Dashboard', href: '/dashboard', current: true },
+    { public: false, name: 'Email', href: '/email', current: false },
+    { public: true, name: 'Projects', href: '/projects', current: false },
+    { public: true, name: 'Calendar', href: '/calendar', current: false },
+    { public: true, name: 'Reports', href: '/reports', current: false },
   ]
 
   const userNavigation = [
-    { name: 'Profile', href: '#' },
+    { name: 'Profile', href: '/profile' },
     { name: 'Settings', href: '/settings' },
-    { name: 'Log out', href: '#' },
   ]
 
   return (
@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Logo/>
+            <Logo color={"black"}/>
             {/* Navigation Menu */}
             <div className="hidden md:block">
               <NavigationMenu navigation={navigation}/>
