@@ -1,7 +1,8 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import classNames from "../../utilities/classNames";
 
-function MenuDrawer({user, navigation, userNavigation, classNames, open, setOpen}) {
+function MenuDrawer({user, navigation, userNavigation, open, setOpen}) {
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10 md:hidden">

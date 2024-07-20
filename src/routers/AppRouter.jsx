@@ -1,25 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
-import Navbar from '../components/Navbar'
-import DasboardPage from '../pages/DashboardPage'
-import NotFound from '../pages/NotFound'
+import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PublicRouter from './PublicRouter';
+import PrivateRouter from './PrivateRouter';
+import RoleRouter from './roleRouters/RoleRouter';
+import LoginPage from '../pages/LoginPage';
+import SignupPage from '../pages/SignupPage';
 
 
 const AppRouter = () => {
 
+  const { isAuthenticated } = useSelector(state => state.auth);
+  
+  const lastPath = () => {
+    const lastPath = localStorage.getItem('lastPath');
+    return lastPath === '/' ? '/dashboard' : lastPath;
+  };
+
   return (
     <Router>
-      <div className="h-screen">
-        <Navbar/>
-        <main className="flex flex-1 flex-col gap-4 p-4 mx-auto max-w-[1600px] md:gap-8 md:p-8 ">
-          <Routes>
-            <Route path='/' element={ <DasboardPage /> }/>
-            <Route path='/dashboard' element={ <DasboardPage /> }/>
-            <Route path='/page-not-found' element={ <NotFound /> }/>
-            <Route path="*" element={<Navigate to={ '/page-not-found' }/>} />
-          </Routes>
-        </main>
-      </div>
+      <Routes>
+        <Route path="/signup" element={
+          <PublicRouter isAuthenticated={ isAuthenticated } lastPath={lastPath()}>
+            <SignupPage/>
+          </PublicRouter>
+        } />
+
+        <Route path="/login" element={
+          <PublicRouter isAuthenticated={ isAuthenticated } lastPath={lastPath()}>
+            <LoginPage />
+          </PublicRouter>
+        } />
+
+        <Route path="/*" element={
+          <PrivateRouter isAuthenticated={ isAuthenticated }>
+            <RoleRouter/>
+          </PrivateRouter>
+        } />
+      </Routes>
     </Router>  
   );
 };
