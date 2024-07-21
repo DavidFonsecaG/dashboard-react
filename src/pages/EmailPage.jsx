@@ -10,7 +10,13 @@ const EmailPage = () => {
           data-panel-group-direction="horizontal"
           data-panel-group-id=":r12:"
           data-panel-group-units="percentages"
-          style="display: flex; flex-direction: row; height: 100%; overflow: hidden; width: 100%;"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            height: '100%',
+            overflow: 'hidden',
+            width: '100%',
+          }}
         >
           <div
             class=""
@@ -19,7 +25,10 @@ const EmailPage = () => {
             data-panel-id=":r13:"
             data-panel-size="20.0"
             id="data-panel-id-:r13:"
-            style="flex: 20 1 0px; overflow: hidden;"
+            style={{
+              flex: '20 1 0px',
+              overflow: 'hidden',
+            }}
           >
             <div class="flex h-[52px] items-center justify-center px-2">
               <button
@@ -33,7 +42,7 @@ const EmailPage = () => {
                 class="h-9 w-full justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 flex items-center gap-2 [&amp;>span]:line-clamp-1 [&amp;>span]:flex [&amp;>span]:w-full [&amp;>span]:items-center [&amp;>span]:gap-1 [&amp;>span]:truncate [&amp;_svg]:h-4 [&amp;_svg]:w-4 [&amp;_svg]:shrink-0"
                 aria-label="Select account"
               >
-                <span style="pointer-events: none;">
+                <span style={{ pointerEvents: 'none' }}>
                   <svg
                     role="img"
                     viewBox="0 0 24 24"
@@ -346,7 +355,7 @@ const EmailPage = () => {
             aria-valuemin="15"
             aria-valuenow="20"
             aria-controls="data-panel-id-:r13:"
-            style="cursor: ew-resize; touch-action: none; user-select: none;"
+            style={{ cursor: 'ew-resize', touchAction: 'none', userSelect: 'none' }}
           >
             <div class="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
               <svg
@@ -372,8 +381,8 @@ const EmailPage = () => {
             data-panel-id=":r16:"
             data-panel-size="40.0"
             id="data-panel-id-:r16:"
-            style="flex: 40 1 0px; overflow: hidden;"
-          >
+            style={{ flex: '40 1 0px', overflow: 'hidden' }}
+            >
             <div dir="ltr" data-orientation="horizontal">
               <div class="flex items-center px-4 py-2">
                 <h1 class="text-xl font-bold">Inbox</h1>
@@ -383,8 +392,8 @@ const EmailPage = () => {
                   class="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground ml-auto"
                   tabindex="0"
                   data-orientation="horizontal"
-                  style="outline: none;"
-                >
+                  style={{ outline: 'none' }}
+                  >
                   <button
                     type="button"
                     role="tab"
@@ -453,20 +462,24 @@ const EmailPage = () => {
                 id="radix-:r17:-content-all"
                 tabindex="0"
                 class="ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 m-0"
-                style="animation-duration: 0s;"
-              >
+                style={{ animationDuration: '0s' }}
+                >
                 <div
                   dir="ltr"
                   class="relative overflow-hidden h-screen"
-                  style="position: relative; --radix-scroll-area-corner-width: 0px; --radix-scroll-area-corner-height: 0px;"
+                  style={{ 
+                    position: 'relative', 
+                    '--radix-scroll-area-corner-width': '0px', 
+                    '--radix-scroll-area-corner-height': '0px' 
+                  }}
                 >
                   {/* <style>[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}</style> */}
                   <div
                     data-radix-scroll-area-viewport=""
                     class="h-full w-full rounded-[inherit]"
-                    style="overflow: hidden scroll;"
+                    style={{ overflow: 'hidden scroll' }}
                   >
-                    <div style="min-width: 100%; display: table;">
+                    <div style={{ minWidth: '100%', display: 'table' }}>
                       <div class="flex flex-col gap-2 p-4 pt-0">
                         <button class="flex flex-col items-start gap-2 rounded-lg border p-3 text-left text-sm transition-all hover:bg-accent bg-muted">
                           <div class="flex w-full flex-col gap-1">
@@ -1025,7 +1038,7 @@ const EmailPage = () => {
             aria-valuemin="80"
             aria-valuenow="40"
             aria-controls="data-panel-id-:r16:"
-            style="cursor: ew-resize; touch-action: none; user-select: none;"
+            style={{ cursor: 'ew-resize', touchAction: 'none', userSelect: 'none' }}
           >
             <div class="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
               <svg
@@ -1051,7 +1064,7 @@ const EmailPage = () => {
             data-panel-id=":r1b:"
             data-panel-size="40.0"
             id="data-panel-id-:r1b:"
-            style="flex: 40 1 0px; overflow: hidden;"
+            style={{ flex: '40 1 0px', overflow: 'hidden' }}
           >
             <div class="flex h-full flex-col">
               <div class="flex items-center p-2">
@@ -1330,7 +1343,15 @@ const EmailPage = () => {
                             tabindex="-1"
                             type="checkbox"
                             value="on"
-                            style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 36px; height: 20px;"
+                            style={{ 
+                              transform: 'translateX(-100%)', 
+                              position: 'absolute', 
+                              pointerEvents: 'none', 
+                              opacity: 0, 
+                              margin: '0px', 
+                              width: '36px', 
+                              height: '20px' 
+                            }}                            
                           />{" "}
                           Mute this thread
                         </label>
