@@ -7,13 +7,15 @@ import NotFound from "../../pages/NotFound";
 
 const AdminRouter = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen flex flex-col">
       <Navbar />
-      <main className="flex flex-1 flex-col gap-4 p-4 mx-auto max-w-[1600px] md:gap-8 md:p-8 ">
+      <main className="flex-1 flex-col gap-4 mx-auto min-w-full max-w-[1600px] md:gap-8 overflow-auto">
         <Routes>
           <Route path="/" element={<DasboardPage />} />
           <Route path="/dashboard" element={<DasboardPage />} />
           <Route path="/email" element={<EmailPage />} />
+          <Route path="/email/*" element={<EmailPage />} />
+          <Route path="/email/*/:itemId" element={<EmailPage />} />
           <Route path="/page-not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to={"/page-not-found"} />} />
         </Routes>
